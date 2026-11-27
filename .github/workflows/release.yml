@@ -16,6 +16,8 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          # main 受 protect-main 規則保護，只有部署金鑰能直接推送（最後一步用）
+          ssh-key: ${{ secrets.MAIN_DEPLOY_KEY }}
 
       # 依條款檔案分組，只列出動到該檔案的 commit（訊息在前、編號在後）
       # <!-- id --> 為 TermsGate 辨識段落用，網頁上不會顯示
