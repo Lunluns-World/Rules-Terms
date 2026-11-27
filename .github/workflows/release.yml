@@ -1,0 +1,52 @@
+name: Release
+
+# 推送 YYYY.MM.DD 格式的 tag 時觸發，例如 2026.12.01
+on:
+  push:
+    tags:
+      - '[0-9][0-9][0-9][0-9].[0-9][0-9].[0-9][0-9]'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # 依條款檔案分組，只列出動到該檔案的 commit（訊息在前、編號在後）
+      # <!-- id --> 為 TermsGate 辨識段落用，網頁上不會顯示
+      - name: 產生修改紀錄（依條款分組）
+        run: |
+          PREV=$(git describe --tags --abbrev=0 "${GITHUB_REF_NAME}^" 2>/dev/null || true)
+          RANGE="${PREV:+$PREV..}${GITHUB_REF_NAME}"
+          : > CHANGELOG.md
+          for pair in "general:General.md:全平台通用服務條款" \
+                      "minecraft:Minecraft.md:Minecraft 服務條款" \
+                      "store:Store.md:商品共同遵守條款" \
+                      "privacy:Privacy.md:隱私權條款" \
+                      "staff:Staff.md:管理人員列表"; do
+            IFS=: read -r id file title <<< "$pair"
+            LOG=$(git log "$RANGE" --no-merges --pretty=format:'- %s (%h)' -- "$file")
+            if [ -n "$LOG" ]; then
+              printf '## %s\n<!-- %s -->\n%s\n\n' "$title" "$id" "$LOG" >> CHANGELOG.md
+            fi
+          done
+          [ -s CHANGELOG.md ] || echo "本次無條款內容變更" > CHANGELOG.md
+          cat CHANGELOG.md
+
+      - name: 建立 Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" \
+            General.md Minecraft.md Store.md Privacy.md Staff.md \
+            --title "$GITHUB_REF_NAME" \
+            --notes-file CHANGELOG.md
+
+      # 不加 --force：main 被直接改過時會失敗，避免覆蓋
+      - name: 將 main 更新為發布版本
+        run: git push origin "${GITHUB_SHA}:refs/heads/main"

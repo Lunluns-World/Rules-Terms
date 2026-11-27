@@ -1,0 +1,14 @@
+{
+  "document": "general",
+  "title": "全平台通用服務條款",
+  "file": "General.md",
+  "versions": [
+    {
+      "version": "2026.12.01",
+      "published_at": "2026-11-24",
+      "effective_at": "2026-12-01",
+      "require_accept": true,
+      "summary": "首次發布"
+    }
+  ]
+}
