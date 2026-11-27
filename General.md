@@ -5,7 +5,7 @@
 ### 〔公告日期〕：2026/11/28
 ### 〔生效日期〕：2026/12/12
 
-> 本條款以 GitHub 之版本為正本。生效後繼續使用本方服務者，視為同意本條款。
+> 本條款以 [GitHub 之版本](https://github.com/Lunluns-World/Rules-Terms/blob/main/General.md)為正本。生效後繼續使用本方服務者，視為同意本條款。
 
 #### 📖 『部分名詞定義』
 - 本方：Lunlun's World 及其伺服主。
