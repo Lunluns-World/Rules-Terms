@@ -10,7 +10,7 @@
 |---|---|---|
 | 全平台通用服務條款 | [General.md](General.md) | 所有服務 |
 | Minecraft 服務條款 | [Minecraft.md](Minecraft.md) | Minecraft 伺服器 |
-| 商品共同遵守條款 | [Store.md](Store.md) | 官方商店 |
+| 商店條款及退換貨政策 | [Store.md](Store.md) | 官方商店 |
 | 隱私權條款 | [Privacy.md](Privacy.md) | 所有服務 |
 | 管理人員列表 | [Staff.md](Staff.md) | 管理人員身分確認 |
 

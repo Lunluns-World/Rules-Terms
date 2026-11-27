@@ -1,5 +1,5 @@
-# 『商品共同遵守條款（含退換貨政策）』
-## 『Store Terms』
+# 『商店條款及退換貨政策』
+## 『Store Terms & Refund Policy』
 
 ### 〔版本〕：YYYY.MM.DD
 ### 〔公告日期〕：YYYY/MM/DD

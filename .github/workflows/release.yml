@@ -26,7 +26,7 @@ jobs:
           : > CHANGELOG.md
           for pair in "general:General.md:全平台通用服務條款" \
                       "minecraft:Minecraft.md:Minecraft 服務條款" \
-                      "store:Store.md:商品共同遵守條款" \
+                      "store:Store.md:商店條款及退換貨政策" \
                       "privacy:Privacy.md:隱私權條款" \
                       "staff:Staff.md:管理人員列表"; do
             IFS=: read -r id file title <<< "$pair"
