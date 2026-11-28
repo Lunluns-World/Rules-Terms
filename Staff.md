@@ -14,7 +14,10 @@
 | 侖侖 | shika_lunlun | 715119615973392405 | 1un1un | a382d5eb-3094-441c-8d8d-379da7ad3226 |
 
 ## 超級管理員
-目前無。
+| 名稱 | Discord 使用者名稱 | Discord User ID | Minecraft ID | Minecraft UUID |
+|---|---|---|---|---|
+| explicities0310 | explicities0310 | 389434785946140675 | explicities0310 | c2d913a6-0272-40a7-8542-82532662dd06 |
+| 小熊貓 | uc_john | 533632235371364353 | UC_John | 9c8f56c6-2129-449e-a0ce-1d95e1d4c3a7 |
 
 ## 管理員
 目前無。
